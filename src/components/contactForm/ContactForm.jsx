@@ -1,11 +1,22 @@
-import React from 'react'
+import React from "react";
 
-const ContactForm = () => {
+const ContactForm = ({ contacts, setContacts }) => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <form>
+      <div>
+        <input name="full_name" type="text" placeholder="Full Name" />
+      </div>
+      <div>
+        <input
+          type="number"
+          name="phone number"
+          placeholder="Phone Number"
+          maxLength={"10"}
+          minLength={"10"}
+        ></input>
+      </div>
+    </form>
+  );
+};
 
-export default ContactForm
+export default ContactForm;
