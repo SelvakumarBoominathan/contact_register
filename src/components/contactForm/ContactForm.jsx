@@ -11,7 +11,11 @@ const ContactForm = ({ contacts }) => {
   return (
     <div>
       <h2>Contact List</h2>
-      <input placeholder="Search" type="text" />
+      <input
+        placeholder="Search"
+        type="text"
+        onChange={(e) => setFilteredtext(e.target.value)}
+      />
       <ul id="list"></ul>
       <span id="totalCount"></span>
     </div>
