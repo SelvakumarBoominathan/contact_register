@@ -16,8 +16,15 @@ const ContactForm = ({ contacts }) => {
         type="text"
         onChange={(e) => setFilteredtext(e.target.value)}
       />
-      <ul id="list"></ul>
-      <span id="totalCount"></span>
+      <ul id="list">
+        {filteredData.map((item, key) => (
+          <li key={key}>
+            <span>{item.full_name}</span>
+            <span>{item.phone_number}</span>
+          </li>
+        ))}
+      </ul>
+      <span id="totalCount">Total Contacts : ({filteredData.length})</span>
     </div>
   );
 };
