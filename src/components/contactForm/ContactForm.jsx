@@ -15,6 +15,9 @@ const ContactForm = ({ contacts, setContacts }) => {
           minLength={"10"}
         ></input>
       </div>
+      <div id="button">
+        <button>Add</button>
+      </div>
     </form>
   );
 };
