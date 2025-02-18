@@ -2,9 +2,11 @@ import React, { useState } from "react";
 
 const ContactForm = ({ contacts }) => {
   const [filteredText, setFilteredtext] = useState("");
-  const filteredData = contacts.filter((contact)=>{
-    return Object.keys(contact).some
-  })
+  const filteredData = contacts.filter((contact) => {
+    return Object.keys(contact).some((key) =>
+      contact[key].toString().toLowerCase().includes(filteredText.toLowerCase())
+    );
+  });
 
   return (
     <div>
