@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import ContactForm from "../contactForm/ContactForm.jsx";
-import ContactList from "../contactList/ContactList.jsx";
+import ContactForm from "../contactList/ContactList.jsx";
+import ContactList from "../contactForm/ContactForm.jsx";
 
 const Contact = () => {
   const [contacts, setContacts] = useState([
