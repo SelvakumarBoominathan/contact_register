@@ -43,6 +43,80 @@
 
 #container {
   display: flex;
-  color : #012443;
-  background-color: #058192;
+  color: #012443;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  /* background-color: #058192; */
+}
+
+#box {
+  background-color: #fdd2bf;
+  padding: 15px;
+  width: 400px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px #012443;
+}
+
+input {
+  width: 100%;
+  height: 35px;
+  background-color: #fff;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border-radius: 2px;
+  margin: 3px 0;
+  outline: none;
+  font-size: 14px;
+}
+
+#button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#button button {
+  background: transparent;
+  color: #fff;
+  border: none;
+  display: block;
+  background-color: #012443;
+  width: 75px;
+  padding: 6px 20px;
+  margin: 10px;
+  border-radius: 3px;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+h2 {
+  text-align: left;
+}
+
+#list {
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+  transition: all linear 300ms;
+}
+
+#list li {
+  width: 100%;
+  display: flex;
+  margin: 5px 0;
+  justify-content: space-between;
+  font-weight: 500;
+}
+
+#totalCount {
+  font-weight: 500;
+  margin: 10px 0;
+  text-align: right;
+  padding: 0 10px;
+  display: block;
 }
