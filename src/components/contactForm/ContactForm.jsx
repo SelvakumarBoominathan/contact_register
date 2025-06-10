@@ -1,18 +1,23 @@
 import React, { useState } from "react";
 
 const ContactForm = ({ contacts, addContacts }) => {
-  const initialValues = { full_name: "", phome_number: "" };
+  const initialValues = { full_name: "", phone_number: "" };
   const [form, setForm] = useState(initialValues);
   const onChangeInput = (e) => {
-    setForm({ ...form, [e.target.name]: [e.target.value] });
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (form.full_name === "" || form.phome_number === "") {
+    if (form.full_name.trim() === "" || form.phone_number.trim() === "") {
       alert("please Enter the data");
+      console.log(form.full_name, form.phone_number);
+      return;
     }
-    addContacts([...contacts, form]);
+    addContacts((prevContacts) => [...prevContacts, form]);
+
+    // Reset the form after submission
+    setForm(initialValues);
   };
   return (
     <form onSubmit={onSubmit}>
@@ -22,20 +27,22 @@ const ContactForm = ({ contacts, addContacts }) => {
           type="text"
           placeholder="Full Name"
           onChange={onChangeInput}
+          value={form.full_name}
         />
       </div>
       <div>
         <input
           type="number"
           onChange={onChangeInput}
-          name="phone number"
+          name="phone_number"
           placeholder="Phone Number"
-          maxLength={"10"}
-          minLength={"10"}
+          maxLength={10}
+          minLength={10}
+          value={form.phone_number}
         ></input>
       </div>
       <div id="button">
-        <button>Add</button>
+        <button type="submit">Add</button>
       </div>
     </form>
   );
